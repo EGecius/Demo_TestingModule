@@ -1,10 +1,12 @@
 package com.example.egidijusgecius.demo_testingmodule;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import android.support.test.runner.AndroidJUnit4;
 
 import com.example.testdata.TestDataProviderTestDataModule;
+import com.example.testdata.TestUtils;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,5 +22,14 @@ public class ExampleInstrumentedTest {
     public void getDataFromTestDataModule() {
         String name = TestDataProviderTestDataModule.getName();
         assertEquals("TestDataProviderTestDataModule", name);
+    }
+
+    @Test
+    public void readsJson() {
+        TestUtils utils = new TestUtils();
+
+        String string = utils.convertToString("egis_json.json");
+
+        assertTrue(string.contains("egis_value"));
     }
 }
