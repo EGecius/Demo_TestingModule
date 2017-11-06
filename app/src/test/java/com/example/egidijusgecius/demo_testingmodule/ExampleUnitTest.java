@@ -2,6 +2,8 @@ package com.example.egidijusgecius.demo_testingmodule;
 
 import static org.junit.Assert.assertEquals;
 
+import com.example.testdata.TestDataProviderTestDataModule;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -11,16 +13,16 @@ import org.junit.Test;
  */
 public class ExampleUnitTest {
 
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
-
     @Ignore // this does not compile because class is in another modules' test code
     @Test
     public void getDataFromLibrary() {
 //        String string = TestDataProviderLibrary.getString();
 //        assertEquals(string, "s");
+    }
 
+    @Test
+    public void getDataFromTestDataModule() {
+        String name = TestDataProviderTestDataModule.getName();
+        assertEquals("TestDataProviderTestDataModule", name);
     }
 }

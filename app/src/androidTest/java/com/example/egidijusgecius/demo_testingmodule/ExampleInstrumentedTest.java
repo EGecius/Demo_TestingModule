@@ -1,13 +1,13 @@
 package com.example.egidijusgecius.demo_testingmodule;
 
-import android.content.Context;
-import android.support.test.InstrumentationRegistry;
+import static org.junit.Assert.assertEquals;
+
 import android.support.test.runner.AndroidJUnit4;
+
+import com.example.testdata.TestDataProviderTestDataModule;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static org.junit.Assert.*;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -15,11 +15,10 @@ import static org.junit.Assert.*;
  */
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() throws Exception {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.egidijusgecius.demo_testingmodule", appContext.getPackageName());
+    @Test
+    public void getDataFromTestDataModule() {
+        String name = TestDataProviderTestDataModule.getName();
+        assertEquals("TestDataProviderTestDataModule", name);
     }
 }
