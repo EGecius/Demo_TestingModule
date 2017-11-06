@@ -19,7 +19,7 @@ public class ExampleUnitTest {
     @Ignore // this does not compile because class is in another modules' test code
     @Test
     public void getDataFromLibrary() {
-//        String string = TestDataProviderLibary.getString();
+//        String string = TestDataProviderLibrary.getString();
 //        assertEquals(string, "s");
 
     }
