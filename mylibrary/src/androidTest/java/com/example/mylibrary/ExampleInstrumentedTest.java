@@ -1,6 +1,10 @@
 package com.example.mylibrary;
 
+import static org.junit.Assert.assertEquals;
+
 import android.support.test.runner.AndroidJUnit4;
+
+import com.example.testdata.TestDataProviderTestDataModule;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -17,5 +21,11 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() throws Exception {
 //        String string = TestDataProviderLibrary.getString();
+    }
+
+    @Test
+    public void getDataFromTestDataModule() {
+        String name = TestDataProviderTestDataModule.getName();
+        assertEquals("TestDataProviderTestDataModule", name);
     }
 }
