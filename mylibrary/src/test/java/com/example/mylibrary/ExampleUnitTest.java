@@ -1,4 +1,4 @@
-package com.example.egidijusgecius.demo_testingmodule;
+package com.example.mylibrary;
 
 import org.junit.Test;
 
